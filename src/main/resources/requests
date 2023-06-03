@@ -1,0 +1,1 @@
+curl -X POST -H "Content-Type: application/json" -d '{"email": "email@email.com"}' http://localhost:8080/identityProvider/v1/getIdentity
