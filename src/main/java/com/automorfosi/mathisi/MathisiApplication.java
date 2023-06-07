@@ -1,5 +1,7 @@
 package com.automorfosi.mathisi;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,9 +16,13 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = {MongoAutoConfiguration.class, MongoDataAutoConfiguration.class})
+@OpenAPIDefinition(info = @Info(title = "Mathisi : Authentication and Authorization Project",
+		version = "1.0",
+		description = "AN API to manage JWT token and Refresh token lifecycle"))
 public class MathisiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MathisiApplication.class, args);
 	}
+
 
 }

@@ -19,6 +19,7 @@ The JWT Token Repository plays a crucial role in the overall authentication and 
 1. git clone <REPO_URL>
 2. mvn clean package
 3. for accessing the swagger UI http://localhost:8080/swagger-ui/index.html
-3. docker-compose up
+4. for accessing the swagger Doc API http://localhost:8080/v3/api-docs
+5. docker-compose up
 4. mongodb on 27018, API on 8080
 5. docker-compose down to <stop>
