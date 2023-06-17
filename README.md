@@ -1,4 +1,5 @@
 # java-mongodb-docker-mathisi
+## IN-PROGRESS {NOT COMPLETED}
 Component responsible for generating and managing JSON Web Tokens (JWTs) and their corresponding refresh tokens
 
 The repository offers the following key features:
