@@ -24,7 +24,7 @@ public class JwtToken {
 
     private String subject;
     private String issuer;
-    private Date expirationTime;
+    private int validityInHour;
     private Date issuedAt;
     private String audience;
     private String organization;

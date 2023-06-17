@@ -1,6 +1,6 @@
 package com.automorfosi.mathisi.models;
 
-public enum SystemRole {
+public enum UserRole {
     USER,
     ADMIN,
     MANAGER,
