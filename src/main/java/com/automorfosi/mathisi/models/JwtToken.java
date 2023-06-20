@@ -35,4 +35,6 @@ public class JwtToken {
     @NotEmpty(message = "User email should not be null or empty")
     @Email(message = "Email address should be valid")
     private String email; //todo user will request the token based on the email provided, its roles needs to be checked from DB and token would be generated with that role
+    private String password; //todo token should be generated for authenticated users this password needs to share
+
 }
