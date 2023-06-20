@@ -5,6 +5,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/identityProvider/v1")
 @RequiredArgsConstructor
 public class AuthController {
+    private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 
     @Operation(
             summary = "Get JWT token and Refresh token",
@@ -33,6 +36,7 @@ public class AuthController {
     )
     @PostMapping("/getIdentity")
     public ResponseEntity<String> authenticate(@RequestBody JwtToken request) {
+        logger.debug("Granting Identity!");
         return new ResponseEntity<String>("Token Implementation in progress", HttpStatus.OK); //todo identity needs to be implemented
     }
 }

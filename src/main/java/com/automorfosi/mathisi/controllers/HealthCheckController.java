@@ -30,6 +30,7 @@ public class HealthCheckController {
     )
     @GetMapping("/ping")
     public ResponseEntity<String> getStatus() {
+        logger.debug("Healthcheck validation!!");
         return new ResponseEntity<String>("pong", HttpStatus.OK);
     }
 
