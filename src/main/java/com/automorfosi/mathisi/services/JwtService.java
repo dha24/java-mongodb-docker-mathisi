@@ -5,6 +5,8 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.security.Key;
 import java.util.Date;
@@ -12,10 +14,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class JwtService {
+
+    private static final Logger logger = LoggerFactory.getLogger(JwtService.class);
+
     private static final String SECRET_KEY = "25432AA@@!!!OINJA~SKET~54@#$56A586E3L876FMESTD2723575387(8^D#LO82F413F4{,}";
     //todo Implement KMS
 
     private Key getSignInKey(){
+
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
     }

@@ -35,7 +35,6 @@ public class UserService {
         Pageable pageable = PageRequest.of(page, size);
         return userRepository.findAllByEnabledTrue(pageable);
     }
-
     public AuthToken authenticate(JwtToken jwtTokenRequest){
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -43,7 +42,6 @@ public class UserService {
                         jwtTokenRequest.getPassword()
                 )
         );
-
         var user = userRepository.findByEmail(jwtTokenRequest.getEmail())
                 .orElseThrow();
         var jwtToken  = jwtService.generateToken(user);
