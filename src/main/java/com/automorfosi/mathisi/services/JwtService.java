@@ -7,16 +7,21 @@ import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.stereotype.Service;
 
 import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+@Service
 public class JwtService {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtService.class);
-
+    @Autowired
+    private MongoTemplate mongoTemplate;
     private static final String SECRET_KEY = "25432AA@@!!!OINJA~SKET~54@#$56A586E3L876FMESTD2723575387(8^D#LO82F413F4{,}";
     //todo Implement KMS
 
