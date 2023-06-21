@@ -2,6 +2,7 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/auth
+#      uri: ${MONGO_URI:mongodb://localhost:27017/auth} //todo for docker
 logging:
   level:
     root: INFO
