@@ -17,7 +17,7 @@ import java.util.Date;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class JwtToken {
+public class TokenRequest {
 
     @Schema(description = "For which organization this token belongs to")
     @NotEmpty(message = "Subject shouldn't be Null")
