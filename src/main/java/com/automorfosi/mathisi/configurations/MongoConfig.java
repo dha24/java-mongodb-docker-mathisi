@@ -1,21 +1,29 @@
 package com.automorfosi.mathisi.configurations;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.MongoDatabaseFactory;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 
 @Configuration
-@ConfigurationProperties(prefix = "spring.data.mongodb")
 public class MongoConfig {
 
+    @Value("${spring.data.mongodb.uri}")
     private String uri;
 
-    public String getUri() {
-        return uri;
+
+    @Bean
+    public MongoDatabaseFactory mongoDbFactory() {
+        return new SimpleMongoClientDatabaseFactory(uri);
     }
 
-    public void setUri(String uri) {
-        this.uri = uri;
+    @Bean
+    public MongoTemplate mongoTemplate(MongoDatabaseFactory mongoDbFactory) {
+        return new MongoTemplate(mongoDbFactory);
     }
 
 }
